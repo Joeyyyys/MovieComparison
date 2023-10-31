@@ -9,12 +9,19 @@
   <body>
     <main>
       <h1>2023'S Top Domestic Movies</h1>
+      <h2>Movies</h2>
       <form id="new-movie-adder" aria-labelledby="form-heading">
-        <h2>Movies</h2>
-
+        <h2>Add Your Movie</h2>
+        <label for="movie-title">Movie Title:</label>
+        <input id="movie-title" type="text" name="movie-title"><br>
+        <label for="critic-score">Critic Score:</label>
+        <input id="critic-score" type="text" name="critic-score"><br>
+        <label for="audience-score">Audience Score:</label>
+        <input id="audience-score" type="text" name="audience-score"><br>
+        <label for="domestic-gross-sales">Domestic Gross Sales:</label>
+        <input id="domestic-gross-sales" type="text" name="domestic-gross-sales"><br>
       </form>
-      <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
     </main>
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
