@@ -14,8 +14,19 @@
   -webkit-text-size-adjust: 100%;
 }
 
+
 form {
   display: flex;
   flex-direction: column;
+  background-color: rgb(51,51,51);
+}
 
+#main-section {
+  display: flex;
+  flex-direction: row;
+  border:  3px solid blue;
+}
+
+#movie-section {
+  border: 3px solid white;
 }

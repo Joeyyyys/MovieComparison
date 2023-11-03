@@ -8,35 +8,46 @@
   </head>
   <body>
     <main>
-      <h1>2023'S Top Domestic Movies</h1>
+      <h1>2023's Top Domestic Movies</h1>
       <h2>Movies</h2>
-      <form id="new-movie-adder" aria-labelledby="form-heading">
-        <h2>Add Your Movie</h2>
-        <label for="movie-title">Movie Title:</label>
-        <input id="movie-title" type="text" name="movie-title">
-        <label for="critic-score">Critic Score:</label>
-        <input id="critic-score" type="text" name="critic-score">
-        <label for="audience-score">Audience Score:</label>
-        <input id="audience-score" type="text" name="audience-score">
-        <label for="domestic-gross-sales">Domestic Gross Sales:</label>
-        <input id="domestic-gross-sales" type="text" name="domestic-gross-sales">
-        <label for="genre">Genre:</label>
-        <select id="genre" name="genre">
-          <option disabled selected hidden> Select Your Genre</option>
-          <option value="comedy">Comedy</option>
-          <option value="action">Action</option>
-          <option value="adventure">Adventure</option>
-          <option value="drama">Drama</option>
-          <option value="concert">Concert</option>
-          <option value="horror">Horror</option>
-          <option value="documentary">Documentary</option>
-        </select>
-        <button>Add Movie</button>
-      </form>
+        <section id="main-section">
+          <form id="new-movie-adder" aria-labelledby="form-heading">
+            <h2>Add Your Movie</h2>
+            <label for="movie-title">Movie Title:
+              <input id="movie-title" type="text" name="movie-title">
+            </label>
+            <label for="critic-score">Critic Score:
+              <input id="critic-score" type="text" name="critic-score">
+            </label>
+            <label for="audience-score">Audience Score:
+              <input id="audience-score" type="text" name="audience-score">
+            </label>
+            <label for="domestic-gross-sales">Domestic Gross Sales:
+              <input id="domestic-gross-sales" type="text" name="domestic-gross-sales">
+            </label>
+            <label for="genre">Genre:
+              <select id="genre" name="genre">
+                <option disabled selected hidden> Select Your Genre</option>
+                <option value="comedy">Comedy</option>
+                <option value="action">Action</option>
+                <option value="adventure">Adventure</option>
+                <option value="drama">Drama</option>
+                <option value="concert">Concert</option>
+                <option value="horror">Horror</option>
+                <option value="documentary">Documentary</option>
+              </select>
+            </label>
+            <button id="add-movie">Add Movie</button>
+          </form>
+          <section id="movie-section">
+            <ul id="default-movies">
+
+            </ul>
+            <button id="default-button">Go Back To Default</button>
+          </section>
+        </section>
     </main>
-    <section>
-      
-    </section>
+    
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
