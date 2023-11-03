@@ -5,7 +5,7 @@ let defaultMovies = movies;
 
 console.log("ufggn");
 
-// DOM
+// DOM for appending the default movies 
 const createDefaultMovies = (movieTitle, criticScore, audienceScore, domesticTotal, genre) => {
     const ul = document.querySelector("#default-movies");
     const li = document.createElement("li");
