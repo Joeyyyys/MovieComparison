@@ -2,6 +2,7 @@ import './style.css';
 import movies from '../movie-data.json';
 let defaultMovies = movies;
 
+
 console.log("ufggn");
 
 // DOM
@@ -41,4 +42,31 @@ displayDefaultMovies();
 
 
 // localstorage functions 
+const setLocalStorageKey = (key, value) => {
+    localStorage.setItem(key, JSON.stringify(value));
+}
 
+const getLocalStorageValue = (key) => {
+    try {
+        return JSON.parse(localStorage.getItem(key))
+    } catch (err) {
+        console.log(err)
+    }
+}
+export const getMovies = () => {
+    return getLocalStorageValue('movies') || [];             
+}
+export const setMovies = (movies) => {
+    setLocalStorageKey('movies', movies)
+}
+
+export const addMovies = (newMovie) => {
+    setMovies([newMovie, ...getMovies()])
+}
+
+export const initDefaultMoviesIfEmpty = () => {
+    if (!getMovies.length) setMovies(defaultMovies)
+}
+
+initDefaultMoviesIfEmpty();
+console.log(localStorage.movies) // to see all our movies inside of localstorage as a string

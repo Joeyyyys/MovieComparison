@@ -10,7 +10,7 @@
     <main>
       <h1>2023's Top Domestic Movies</h1>
       <h2>Movies</h2>
-        <section id="main-section">
+        <section id="main-section" aria-labelledby="main-content">
           <form id="new-movie-adder" aria-labelledby="form-heading">
             <h2>Add Your Movie</h2>
             <label for="movie-title">Movie Title:
@@ -39,15 +39,16 @@
             </label>
             <button id="add-movie">Add Movie</button>
           </form>
-          <section id="movie-section">
+          <section id="movie-section" aria-labelledby="movie-list">
             <ul id="default-movies">
 
             </ul>
-            <button id="default-button">Go Back To Default</button>
+            <button id="default-button">Go Back To Default Movies</button>
           </section>
         </section>
     </main>
     
     <script type="module" src="/src/main.js"></script>
+
   </body>
 </html>
