@@ -1,9 +1,9 @@
 import './style.css';
 import movies from '../movie-data.json';
+
+// Gloval declarations
 let defaultMovies = movies;
-
-
-console.log("ufggn");
+Chart.defaults.color = 'white';
 
 // DOM for appending the default movies 
 const createDefaultMovies = (movieTitle, criticScore, audienceScore, domesticTotal, genre) => {
@@ -127,7 +127,7 @@ const domesticGraph = () => {
     const ctx = document.getElementById('domestic-graph');
     const addedMovies = getMovies();
     console.log("addedmovies", addedMovies)
-    
+   
     new Chart(ctx, {
         type: 'bar',
         data: {
@@ -139,11 +139,19 @@ const domesticGraph = () => {
           }]
         },
         options: {
-          scales: {
-            y: {
-              beginAtZero: true,
-            }
-          }
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        color: 'white'
+                    }
+                },
+                x: {
+                    ticks: {
+                        color: 'white'
+                    }
+                }
+            },
         }
     });
 };
