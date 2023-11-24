@@ -17,13 +17,13 @@
               <input id="movie-title" type="text" name="movie-title">
             </label>
             <label for="critic-score">Critic Score:
-              <input id="critic-score" type="number" name="critic-score">
+              <input id="critic-score" type="number" min="0" max="100" name="critic-score">
             </label>
             <label for="audience-score">Audience Score:
-              <input id="audience-score" type="number" name="audience-score">
+              <input id="audience-score" type="number" min="0" max="100" name="audience-score">
             </label>
             <label for="domestic-gross-sales">Domestic Gross Sales:
-              <input id="domestic-gross-sales" type="number" name="domestic-gross-sales">
+              <input id="domestic-gross-sales" type="number" min="0" max="100" name="domestic-gross-sales">
             </label>
             <label for="genre">Genre:
               <select id="genre" name="genre">
@@ -34,18 +34,25 @@
                 <option value="drama">Drama</option>
                 <option value="concert">Concert</option>
                 <option value="horror">Horror</option>
+                <option value="adventure">Adventure</option>
+                <option value="documentary">Music</option>
+                <option value="sci-fi">Sci-fi</option>
+                <option value="musical">Musical</option>
+                <option value="thriller">Thriller</option>
                 <option value="documentary">Documentary</option>
               </select>
             </label>
             <button id="add-movie">Add Movie</button>
           </form>
-          <section id="movie-section" aria-labelledby="movie-list">
+          <section id="movie-section" aria-labelledby="movie-list" tabindex="0">
             <ul id="default-movies">
 
             </ul>
-            <button id="default-button">Go Back To Default Movies</button>
           </section>
         </section>
+        <div id="reset-button">
+          <button id="default-button">Go Back To Default Movies</button>
+        </div>
     </main>
     
     <script type="module" src="/src/main.js"></script>

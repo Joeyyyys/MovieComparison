@@ -14,11 +14,17 @@
   -webkit-text-size-adjust: 100%;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 form {
   display: flex;
   flex-direction: column;
   background-color: rgb(51,51,51);
+  width: 300px;
 }
 
 #main-section {
@@ -30,11 +36,25 @@ form {
 
 #movie-section {
   border: 3px solid white;
-  width: 1000px;
+  width: 1400px;
   height: 800px; 
   overflow: auto;
+  display: flex;
 }
 
+#movie-section > #default-movies {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+}
+ 
+li {
+  list-style: none;
+  border: 1px solid #ccc;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  width: 400px;
+}
 
 
 
