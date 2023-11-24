@@ -123,6 +123,32 @@ const resetToDefaultMovies = () => {
     displayDefaultMovies();
 };
 
+const domesticGraph = () => {
+    const ctx = document.getElementById('domestic-graph');
+    const addedMovies = getMovies();
+    console.log("addedmovies", addedMovies)
+    
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: addedMovies.map(row => row.title), 
+          datasets: [{
+            label: 'Domestic Gross',
+            data: addedMovies.map(row => row.domestic),
+            borderWidth: 1,
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            }
+          }
+        }
+    });
+};
+
+
 // Allows for all our functions to be called in one place
 const main = () => {
     initDefaultMoviesIfEmpty();
@@ -136,6 +162,8 @@ const main = () => {
 
     const resetButton = document.querySelector("#default-button");
     resetButton.addEventListener("click", resetToDefaultMovies);
+
+    domesticGraph();
 };
 
 main()
