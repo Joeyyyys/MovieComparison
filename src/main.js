@@ -1,7 +1,7 @@
 import './style.css';
 import movies from '../movie-data.json';
 
-// Gloval declarations
+// Global declarations
 let defaultMovies = movies;
 Chart.defaults.color = 'white';
 
@@ -126,7 +126,7 @@ const resetToDefaultMovies = () => {
 const domesticGraph = () => {
     const ctx = document.getElementById('domestic-graph');
     const addedMovies = getMovies();
-    console.log("addedmovies", addedMovies)
+    // console.log("addedmovies", addedMovies)
    
     new Chart(ctx, {
         type: 'bar',
@@ -156,6 +156,39 @@ const domesticGraph = () => {
     });
 };
 
+const genresTotalGrossGraph = () => {
+    const ctx = document.getElementById('genres-total-gross-graph');
+    const addedMovies = getMovies();
+
+    new Chart(ctx, {
+        type: 'pie',
+        data: {
+          labels: addedMovies.map(row => row.title), 
+          datasets: [{
+            label: 'Domestic Gross',
+            data: addedMovies.map(row => row.domestic),
+            borderWidth: 1,
+          }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        color: 'white'
+                    }
+                },
+                x: {
+                    ticks: {
+                        color: 'white'
+                    }
+                }
+            },
+        }
+    });
+
+}
+
 
 // Allows for all our functions to be called in one place
 const main = () => {
@@ -172,6 +205,8 @@ const main = () => {
     resetButton.addEventListener("click", resetToDefaultMovies);
 
     domesticGraph();
+
+    genresTotalGrossGraph();
 };
 
 main()

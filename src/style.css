@@ -20,40 +20,59 @@
   box-sizing: border-box;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  background-color: rgb(51,51,51);
-  width: 300px;
-}
-
 #main-section {
   display: flex;
   flex-direction: row;
-  border:  3px solid blue;
+}
 
+#form-container {
+  width: 20rem;
+  height: 20rem;
+  margin-top: 5rem;
+  margin-left: 2rem;
+}
+
+form {
+  display: flex;
+  border-radius: 5px;
+  flex-direction: column;
+  background-color: rgb(51,51,51);
+  gap: 1rem;
 }
 
 #movie-section {
-  border: 3px solid white;
-  width: 1400px;
-  height: 800px; 
-  overflow: auto;
-  display: flex;
-}
-
-#movie-section > #default-movies {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-
+  height: 30rem;
+  width: 75rem;
+  margin-left: 2rem;
+  align-items: center;
+  border: 3px solid white;
+  background-color: rgb(51,51,51);
+  gap: 1rem;
 }
- 
+
+#movie-container {
+ display: flex;
+  overflow: auto;
+  width: 60rem;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 li {
   list-style: none;
-  border: 1px solid #ccc;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-  width: 400px;
+  border-radius: 10px;
+  box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.2);
+  width: 25rem;
+  flex-basis: calc(33.33% - 20px); 
+  margin: 10px;
+  background-color: rgb(51,51,51);
+  padding: 20px; 
+  box-sizing: border-box; 
 }
 
 #domestic-graph-section {
@@ -62,8 +81,6 @@ li {
   flex-direction: column;
   align-items: center;
   gap: 5rem;
-  
-  
 }
 
 #domestic-graph-container {
@@ -71,9 +88,19 @@ li {
   height: 40rem;
 }
 
-#domestic-graph {
-  color: white;
+#genres-total-gross-graph-section {
+  background-color: #181818;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
 }
+
+#genres-total-gross-graph-container {
+  width: 60rem;
+  height: 40rem;
+}
+
 
 
 
