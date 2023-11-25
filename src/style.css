@@ -20,6 +20,15 @@
   box-sizing: border-box;
 }
 
+button#add-movie {
+  width: 10rem;
+  margin-left: 4rem;
+}
+
+button#default-button {
+  width: 40rem;
+}
+
 #main-section {
   display: flex;
   flex-direction: row;

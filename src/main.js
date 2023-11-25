@@ -66,7 +66,7 @@ export const initDefaultMoviesIfEmpty = () => {
     if (storedMovies.length === 0) setMovies(defaultMovies)
 }
 
-console.log(localStorage.movies) // to see all our movies inside of localstorage as a string
+// console.log(localStorage.movies) // to see all our movies inside of localstorage as a string
 
 // Form Submission 
 const handleSubmit = (e) => {
@@ -159,36 +159,41 @@ const domesticGraph = () => {
 const genresTotalGrossGraph = () => {
     const ctx = document.getElementById('genres-total-gross-graph');
     const addedMovies = getMovies();
-
+    const uniqueGenres = [...new Set(addedMovies.map(row => row.genre))]
+    const totalGrossGenres = new Map();
+    const domesticOfGenresAdded = addedMovies.forEach(movie => {
+        if (!totalGrossGenres.has(movie.genre)) {
+            totalGrossGenres.set(movie.genre, movie.domestic)
+        } else {
+            totalGrossGenres.set(movie.genre, totalGrossGenres.get(movie.genre) + movie.domestic)
+        }
+    })
+    // console.log(totalGrossGenres.values);
     new Chart(ctx, {
-        type: 'pie',
+        type: 'doughnut',
         data: {
-          labels: addedMovies.map(row => row.title), 
+          labels: uniqueGenres, 
           datasets: [{
-            label: 'Domestic Gross',
-            data: addedMovies.map(row => row.domestic),
-            borderWidth: 1,
+            label: 'Total Gross of Genre',
+            data: Array.from(totalGrossGenres.values()),
+            hoverOffset: 4,
+            backgroundColor: [
+                'rgb(31, 119, 180)',
+                'rgb(255, 127, 14)',
+                'rgb(44, 160, 44)',
+                'rgb(214, 39, 40)',
+                'rgb(148, 103, 189)',
+                'rgb(140, 86, 75)',
+                'rgb(227, 119, 194)',
+                'rgb(127, 127, 127)',
+                'rgb(188, 189, 34)',
+              ],
           }]
         },
         options: {
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    ticks: {
-                        color: 'white'
-                    }
-                },
-                x: {
-                    ticks: {
-                        color: 'white'
-                    }
-                }
-            },
         }
     });
-
 }
-
 
 // Allows for all our functions to be called in one place
 const main = () => {
