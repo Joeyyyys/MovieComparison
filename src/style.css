@@ -90,6 +90,7 @@ li {
   flex-direction: column;
   align-items: center;
   gap: 5rem;
+  height: 40rem;
 }
 
 #domestic-graph-container {
@@ -103,9 +104,23 @@ li {
   flex-direction: column;
   align-items: center;
   gap: 5rem;
+
 }
 
 #genres-total-gross-graph-container {
+  width: 60rem;
+  height: 40rem;
+}
+
+#critic-audience-graph-section {
+  background-color: #181818;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+}
+
+#critic-audience-graph-container {
   width: 60rem;
   height: 40rem;
 }

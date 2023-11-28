@@ -159,13 +159,14 @@ const domesticGraph = () => {
 const genresTotalGrossGraph = () => {
     const ctx = document.getElementById('genres-total-gross-graph');
     const addedMovies = getMovies();
+    console.log("hi", addedMovies)
     const uniqueGenres = [...new Set(addedMovies.map(row => row.genre))]
     const totalGrossGenres = new Map();
-    const domesticOfGenresAdded = addedMovies.forEach(movie => {
+    addedMovies.forEach(movie => {
         if (!totalGrossGenres.has(movie.genre)) {
-            totalGrossGenres.set(movie.genre, movie.domestic)
+            totalGrossGenres.set(movie.genre, parseInt(movie.domestic))
         } else {
-            totalGrossGenres.set(movie.genre, totalGrossGenres.get(movie.genre) + movie.domestic)
+            totalGrossGenres.set(movie.genre, totalGrossGenres.get(movie.genre) + parseInt(movie.domestic))
         }
     })
     // console.log(totalGrossGenres.values);
@@ -194,6 +195,7 @@ const genresTotalGrossGraph = () => {
         }
     });
 }
+
 
 // Allows for all our functions to be called in one place
 const main = () => {
