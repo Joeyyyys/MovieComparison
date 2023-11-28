@@ -125,7 +125,7 @@ const resetToDefaultMovies = () => {
 
 const domesticGraph = () => {
     const ctx = document.getElementById('domestic-graph');
-    const addedMovies = getMovies();
+    const addedMovies = [...getMovies()].sort((a, b) => b.domestic - a.domestic); // sort it by descending order to make my chart look neater
     // console.log("addedmovies", addedMovies)
    
     new Chart(ctx, {
@@ -159,7 +159,7 @@ const domesticGraph = () => {
 const genresTotalGrossGraph = () => {
     const ctx = document.getElementById('genres-total-gross-graph');
     const addedMovies = getMovies();
-    console.log("hi", addedMovies)
+    // console.log("hi", addedMovies)
     const uniqueGenres = [...new Set(addedMovies.map(row => row.genre))]
     const totalGrossGenres = new Map();
     addedMovies.forEach(movie => {
@@ -196,6 +196,17 @@ const genresTotalGrossGraph = () => {
     });
 }
 
+const updateCharts = () => {
+        
+    Chart.helpers.each(Chart.instances, (instance) => {
+        instance.destroy();
+    });
+
+    domesticGraph();
+    genresTotalGrossGraph();
+};
+
+
 
 // Allows for all our functions to be called in one place
 const main = () => {
@@ -214,6 +225,9 @@ const main = () => {
     domesticGraph();
 
     genresTotalGrossGraph();
+
+    form.addEventListener("submit", updateCharts);
+    resetButton.addEventListener("click", updateCharts);
 };
 
 main()
